@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -49,10 +50,12 @@ class RegisterController extends Controller
             'email' => $request->email,
             'address' => $request->address,
             'phone' => $request->phone,
-            'password' => $request->password,
+            'password' => bcrypt($request['password']),
         ]);
 
-        return redirect(route('register'));
+        Alert::success('Registrasi berhasil!','Silahkan melakukan login');
+
+        return redirect()->route('login');
     }
 
     /**

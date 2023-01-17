@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    <div class="container d-flex justify-content-center register mt-3">
+    <div class="container d-flex justify-content-center register">
         <div class="card card-form my-5 px-3">
             <div class="card-body px-2" style="width: 400px;">
                 <div class="d-flex justify-content-center">
@@ -42,6 +42,12 @@
                         <div class="form-group">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" placeholder="Masukkan Password">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="form-group">
+                            <p class="form-label">Sudah memiliki akun? <a href="{{ route('login') }}"
+                                    class="text-decoration-none">Login disini</a></p>
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
