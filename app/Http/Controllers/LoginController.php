@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Category;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
@@ -55,7 +56,7 @@ class LoginController extends Controller
             if (Auth::user()->roles == 'Admin') {
                 $request->session()->regenerate();
                 alert()->success('Selamat datang!','');
-                return redirect()->intended('/admin/user');
+                return redirect()->intended('/admin/dashboard');
             } else{
                 $request->session()->regenerate();
                 alert()->success('Selamat datang!','');
@@ -97,7 +98,17 @@ class LoginController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'category' => 'required',
+        ]);
+
+        Category::where('id', $id)->update([
+            'category' => $request->category,
+        ]);
+
+        Alert::success('Berhasil!', 'Selamat edit category berhasil');
+
+        return redirect('/admin/category');
     }
 
     /**
@@ -108,6 +119,10 @@ class LoginController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Selamat data category berhasil dihapus');
+
+        return redirect('/admin/category');
     }
 }

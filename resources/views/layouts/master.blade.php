@@ -96,16 +96,20 @@
                     <ul class="sidebar-menu">
                         <li class="menu-header">Admin</li>
                         <li class="nav-item dropdown">
-                            <a href="{{ route('admin-user') }}"><i class="fas fa-home"></i><span>Dashboard</span></a>
+                            <a href="{{ route('admin-dashboard') }}"><i
+                                    class="fas fa-home"></i><span>Dashboard</span></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="{{ route('admin-user') }}"><i class="bi bi-person-fill ms-1"></i> <span>Users</span></a>
+                            <a href="{{ route('admin-user') }}"><i class="bi bi-person-fill ms-1"></i>
+                                <span>Users</span></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href=""><i class="bi bi-book-fill ms-1"></i> <span>Book</span></a>
+                            <a href="{{ route('admin-book') }}"><i class="bi bi-book-fill ms-1"></i>
+                                <span>Book</span></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href=""><i class="bi bi-bookmark-fill ms-1"></i> <span>Category Book</span></a>
+                            <a href="{{ route('admin-category') }}"><i class="bi bi-bookmark-fill ms-1"></i>
+                                <span>Category Book</span></a>
                         </li>
                     </ul>
                 </aside>

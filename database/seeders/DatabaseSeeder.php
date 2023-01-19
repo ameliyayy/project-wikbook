@@ -24,11 +24,22 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'roles' => 'Admin',
+            'status' => '-',
             'name' => 'Hyorimika',
-            'email' => 'h@gmail.com',
-            'address' => 'Bogor',
+            'email' => 'hyorimika@gmail.com',
+            'address' => 'Japan',
             'phone' => '085774620411',
             'password' => bcrypt('hyori'),
+        ]);
+
+        User::create([
+            'roles' => 'Admin',
+            'status' => '-',
+            'name' => 'Arabella',
+            'email' => 'arabella@arabella.com',
+            'address' => 'Indonesia',
+            'phone' => '0895372371035',
+            'password' => bcrypt('arabella'),
         ]);
     }
 }
